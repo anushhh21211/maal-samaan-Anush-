@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: url('https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTV8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHx8fDE3NjMyOTUyMTF8MA&ixlib=rb-4.1.0')no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'poppins' sans-serif;
+        }
+        .calculator{
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px #eaeaea;
+            width: 300px;
+            backdrop-filter: blur(10px);
+            border: 2px solid #eaeaea;
+            margin: 0 auto;
+        }
+        .display{
+            width: 80%;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.6);
+            color: antiquewhite;
+            font-size: 2rem;
+            text-align: center;
+            padding: 15px;
+            margin: 0 auto 15px auto;
+            border: 12px;
+            text-shadow: 0 0 10px #ABABAB;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        button{
+            height: 65px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #eaeaea;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #eaeaea;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 12px rgb(24, 20, 20) ;
+        }
+        button:hover{
+             background: rgba(168, 149, 149, 0.12);
+             box-shadow: 0 0 18px rgba(255, 255, 255, 0.4);
+             transform: translateY(-3px); 
+        }
+        .equal{
+            background: linear-gradient(135deg, rgb(107, 98, 12), rgb(75, 68, 4));
+            box-shadow: 0 0 15px rgb(54, 36, 36);
+        }
+        .equal:hover{
+            background: rgb(99, 99, 73);
+        }
+        .clear{
+             background-color: rgb(122, 59, 63);
+            box-shadow: 0 0 15px rgb(70, 47, 47);
+        }
+        .clear:hover{
+            background-color: rgb(122, 59, 63);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button onclick="clearDisplay()" class="clear">C</button>
+            <button onclick="deleteLast()">DEL</button>
+            <button onclick="appendValue('%')">%</button>
+             <button onclick="appendValue('/')">÷</button>
+
+               <button onclick="appendValue('7')">7</button>
+                 <button onclick="appendValue('8')">8</button>
+                   <button onclick="appendValue('9')">9</button>
+                     <button onclick="appendValue('*')">x</button>
+
+                      <button onclick="appendValue('4')">4</button>
+                       <button onclick="appendValue('5')">5</button>
+                        <button onclick="appendValue('6')">6</button>
+                         <button onclick="appendValue('-')">-</button>
+
+                         
+                      <button onclick="appendValue('1')">1</button>
+                       <button onclick="appendValue('2')">2</button>
+                        <button onclick="appendValue('3')">3</button>
+                         <button onclick="appendValue('+')">+</button>
+
+                         
+                      <button onclick="appendValue('0')">0</button>
+                       <button onclick="appendValue('.')">.</button>
+                        <button onclick="calculate()" class="equal">=</button>
+        </div>
+    </div>
+</body>
+</html>
